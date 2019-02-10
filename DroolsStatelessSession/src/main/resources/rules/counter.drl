@@ -1,0 +1,18 @@
+package rules
+
+import com.binod.DroolsStatelessSession.PaymentCounter
+
+rule "Payment Counter check"
+	when 
+		$temp : PaymentCounter()
+	then
+		System.out.println("Payment Counter inserted : " +$temp.channel +" and amount is " + $temp.amount);
+	end
+
+rule "Payment Counter accumulate"
+	when
+		$temp : PaymentCounter()
+		accumulate (PaymentCounter(); $occurance : count())
+	then
+		System.out.println("Payment Counter channel : "+$temp.channel +" Amount : "+$temp.amount+" Accumulate value :"+$occurance);
+	end	

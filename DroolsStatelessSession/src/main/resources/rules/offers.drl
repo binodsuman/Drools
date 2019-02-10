@@ -1,0 +1,29 @@
+package rules
+
+import com.binod.DroolsStatelessSession.PaymentOffer
+
+rule "Offer for Paytm"
+	when 
+		offerObject: PaymentOffer(channel=="paytm")
+	then
+		offerObject.setDiscount(17);
+		System.out.println("Offer only for PayTm");
+	end
+
+rule "Offer for PhonePe"
+	when 
+		offerObject: PaymentOffer(channel=="phonepe")
+	then
+		offerObject.setDiscount(20);
+	end
+
+rule "Offer for GooglePay"
+	when 
+		offerObject: PaymentOffer(channel=="googlepay")
+	then
+		offerObject.setDiscount(25);
+	end
+	
+	
+	 
+
