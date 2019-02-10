@@ -1,7 +1,8 @@
 
-
-Setup and first program project
-KieSession project 
-Complex Rule and multiple Rules project
-Statefull Session project
-Stateless Session project
+<b>
+Setup and first program project <br>
+KieSession project <br>
+Complex Rule and multiple Rules project <br>
+Statefull Session project <br>
+Stateless Session project <br>
+</b>
